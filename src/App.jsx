@@ -9,16 +9,21 @@ import {
   Routes,
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import ScollUpButton from "./components/ScollUpButton";
+import { MovieProvider } from "./contexts/MovieContext";
 
 function App() {
   return (
-    <main className="w-auto h-auto flex flex-row justify-content-center">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/favorite" element={<Favorite />} />
-      </Routes>
-    </main>
+    <MovieProvider>
+      <main className="w-auto min-vh-100 flex flex-row justify-content-center">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorite" element={<Favorite />} />
+        </Routes>
+        <ScollUpButton />
+      </main>
+    </MovieProvider>
   );
 }
 

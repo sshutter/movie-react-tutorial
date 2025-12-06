@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
@@ -6,8 +7,12 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-brand">Movie App</div>
         <div className="navbar-links gap-3 d-flex flex-row">
-          <Link to="/">Home</Link>
-          <Link to="/favorite">Favorite</Link>
+          <Link to="/" className="navLink">
+            Home
+          </Link>
+          <Link to="/favorite" className="navLink">
+            Favorite
+          </Link>
         </div>
       </div>
     </nav>

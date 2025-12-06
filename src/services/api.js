@@ -6,7 +6,10 @@ export const fetchPopularMovies = async (page) => {
     `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
   );
   const data = await response.json();
-  return data.results;
+  const resultsSorted = data.results.sort(
+    (a, b) => b.vote_count - a.vote_count
+  );
+  return resultsSorted;
 };
 
 export const searchMovie = async (query, page) => {
@@ -16,5 +19,8 @@ export const searchMovie = async (query, page) => {
     )}&page=${page}`
   );
   const data = await response.json();
-  return data.results;
+  const resultsSorted = data.results.sort(
+    (a, b) => b.vote_count - a.vote_count
+  );
+  return resultsSorted;
 };

@@ -8,6 +8,7 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
+import ScollUpButton from "./components/ScollUpButton.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
